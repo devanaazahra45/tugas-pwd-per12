@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan JavaScript Dasar</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        hr {
+            margin: 15px 0;
+        }
+        button {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1 -->
+    <h3>1. Menampilkan nama ke halaman web</h3>
+    <p id="nama"></p>
+    <hr>
+
+    <!-- 2 -->
+    <h3>2. Menampilkan pesan konfirmasi</h3>
+    <button onclick="tampilKonfirmasi()">Klik konfirmasi</button>
+    <hr>
+
+    <!-- 3 -->
+    <h3>3. Perhitungan sederhana (console)</h3>
+    <p>Lihat hasil di Inspect → Console</p>
+    <hr>
+
+    <!-- 4 -->
+    <h3>4. Fungsi menampilkan jam</h3>
+    <button onclick="tampilJam()">Tampilkan jam</button>
+    <hr>
+
+    <!-- 5 -->
+    <h3>5. Event Handling (ubah isi teks)</h3>
+    <p id="info">Klik tombol untuk mengubah teks</p>
+    <button onclick="ubahInfo()">Ubah teks</button>
+
+    <script>
+        // 1. Menampilkan nama
+        let nama = "Devana Aprilia Azahra";
+        document.getElementById("nama").innerHTML = 
+            "Nama saya: " + nama;
+
+        // 2. Konfirmasi
+        function tampilKonfirmasi() {
+            let jawab = confirm("Apakah Anda siap belajar JavaScript?");
+            if (jawab) {
+                alert("Mantap! Mari belajar 🚀");
+            } else {
+                alert("Tidak apa-apa, belajar pelan-pelan 😊");
+            }
+        }
+
+        // 3. Perhitungan
+        let x = 10;
+        let y = 8;
+        let hasil = x * y;
+        console.log("Hasil perkalian:", hasil);
+
+        // 4. Fungsi jam
+        function tampilJam() {
+            let waktu = new Date().toLocaleTimeString();
+            alert("Jam sekarang: " + waktu);
+        }
+
+        // 5. Event handling
+        function ubahInfo() {
+            let teks = document.getElementById("info");
+            teks.innerHTML = "Hai Devana!";
+            teks.style.color = "blue";
+            teks.style.fontWeight = "bold";
+        }
+    </script>
+
+</body>
+</html>
